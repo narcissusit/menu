@@ -1,0 +1,107 @@
+body{
+	min-width: 320px;
+	overflow-x: hidden;
+}
+
+header .wrap{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.wrap{
+	max-width: 960px;
+	margin: auto;
+}
+
+.logo{
+	font-family: 'Monotype Corsiva';
+	font-size: 45px;
+	color: grey;
+}
+
+.mob_menu::before{
+	content: '';
+	margin-top: 10px;
+	background-image: url('sprite.png');
+	width: 45px;
+	height: 30px;
+	display: block;
+}
+
+.menu{
+	position: absolute;
+	right: -300px;
+	top: 0;
+	width: 250px;
+	height: 100vh;
+}
+
+.menu::before{
+	content: '';
+	background-image: url('sprite.png');
+	background-position: -51px 0;
+	width: 35px;
+	height: 30px;
+	display: inline-block;
+	position: absolute;
+	left: -50px;
+	top: 10px;
+}
+
+.mob_menu:hover,
+.menu:hover{
+	cursor: pointer;
+}
+
+.menu ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: grey;
+}
+
+.menu li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+	font-family: Arial;
+	padding: 20px;
+}
+
+.menu li a:hover{
+	background-color: black;
+}
+
+@media(min-width: 720px){
+	.mob_menu{
+		display: none;
+	}
+
+	.menu{
+		position: static;
+		width: auto;
+	}
+
+	.menu ul{
+		background-color: white;
+	}
+
+	.menu ul li{
+		display: inline-block;
+	}
+
+	.menu ul li a{
+		color: grey;
+	}
+
+	.menu ul li a:hover{
+		background-color: white;
+		color: black;
+	}
+
+	.mob_menu::before{
+		display: none;
+	}
+}
